@@ -1,0 +1,24 @@
+<html>
+<body>
+<h2>Carrinho</h2>
+<button onclick="add()">Adicionar</button>
+<button onclick="remover()">Remover último</button>
+<ul id="lista"></ul>
+
+<script>
+let carrinho=[];
+function add(){
+ carrinho.push("Produto");
+ render();
+}
+function remover(){
+ carrinho.pop();
+ render();
+}
+function render(){
+ lista.innerHTML="";
+ carrinho.forEach(p=>lista.innerHTML+=`<li>${p}</li>`);
+}
+</script>
+</body>
+</html>
