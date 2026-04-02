@@ -1,0 +1,19 @@
+<html>
+<body>
+<h2>Usuários</h2>
+<button onclick="filtrar()">18+</button>
+<ul id="lista"></ul>
+
+<script>
+let usuarios=[{nome:"Ana",idade:20},{nome:"João",idade:15}];
+function render(arr){
+ lista.innerHTML="";
+ arr.forEach(u=>lista.innerHTML+=`<li>${u.nome}</li>`);
+}
+render(usuarios);
+function filtrar(){
+ render(usuarios.filter(u=>u.idade>=18));
+}
+</script>
+</body>
+</html>
