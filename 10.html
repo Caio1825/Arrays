@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>Ranking</h2>
+<input id="jogador"><input id="pontos" type="number">
+<button onclick="add()">Adicionar</button>
+<ul id="lista"></ul>
+
+<script>
+let ranking=[];
+function add(){
+ ranking.push({jogador:jogador.value,pontos:+pontos.value});
+ ranking.sort((a,b)=>b.pontos-a.pontos);
+ render();
+}
+function render(){
+ lista.innerHTML="";
+ ranking.map((j,i)=>lista.innerHTML+=`<li>${i+1}º ${j.jogador}</li>`);
+}
+</script>
+</body>
+</html>
