@@ -1,0 +1,12 @@
+<html>
+<body>
+<h2>Produtos</h2>
+<ul id="lista"></ul>
+
+<script>
+const produtos=[{nome:"Mouse",preco:50},{nome:"Teclado",preco:100}];
+let desconto=produtos.map(p=>({nome:p.nome,preco:p.preco*0.9}));
+desconto.forEach(p=>lista.innerHTML+=`<li>${p.nome}-${p.preco}</li>`);
+</script>
+</body>
+</html>
