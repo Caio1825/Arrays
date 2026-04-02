@@ -1,0 +1,20 @@
+<html>
+<body>
+<h2>Editar</h2>
+<ul id="lista"></ul>
+
+<script>
+let tarefas=["A","B"];
+function render(){
+ lista.innerHTML="";
+ tarefas.forEach((t,i)=>lista.innerHTML+=`<li>${t}<button onclick="edit(${i})">Editar</button></li>`);
+}
+function edit(i){
+ let novo=prompt("Novo:");
+ tarefas.splice(i,1,novo);
+ render();
+}
+render();
+</script>
+</body>
+</html>
