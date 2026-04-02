@@ -1,0 +1,25 @@
+<html>
+<body>
+<h2>Lista de Compras</h2>
+<input id="itemInput"><button onclick="addItem()">Adicionar</button>
+<ul id="lista"></ul>
+
+<script>
+let lista=[];
+function addItem(){
+ lista.push(itemInput.value);
+ render();
+}
+function remover(i){
+ lista.splice(i,1);
+ render();
+}
+function render(){
+ lista.innerHTML="";
+ lista.forEach((item,i)=>{
+ document.getElementById("lista").innerHTML+=`<li>${item}<button onclick="remover(${i})">X</button></li>`;
+ });
+}
+</script>
+</body>
+</html>
