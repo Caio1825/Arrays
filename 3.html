@@ -1,0 +1,23 @@
+<html>
+<body>
+<h2>Tarefas</h2>
+<input id="titulo">
+<select id="prioridade"><option>baixa</option><option>alta</option></select>
+<button onclick="add()">Adicionar</button>
+<ul id="lista"></ul>
+
+<script>
+let tarefas=[];
+function add(){
+ let t={titulo:titulo.value,prioridade:prioridade.value};
+ if(t.prioridade=="alta") tarefas.unshift(t);
+ else tarefas.push(t);
+ render();
+}
+function render(){
+ lista.innerHTML="";
+ tarefas.forEach(t=>lista.innerHTML+=`<li>${t.titulo}</li>`);
+}
+</script>
+</body>
+</html>
