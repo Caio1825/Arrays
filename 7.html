@@ -1,0 +1,21 @@
+<html>
+<body>
+<h2>LocalStorage</h2>
+<input id="tarefa"><button onclick="add()">Adicionar</button>
+<ul id="lista"></ul>
+
+<script>
+let tarefas=JSON.parse(localStorage.getItem("tarefas"))||[];
+function add(){
+ tarefas.push(tarefa.value);
+ localStorage.setItem("tarefas",JSON.stringify(tarefas));
+ render();
+}
+function render(){
+ lista.innerHTML="";
+ tarefas.forEach(t=>lista.innerHTML+=`<li>${t}</li>`);
+}
+render();
+</script>
+</body>
+</html>
