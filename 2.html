@@ -1,0 +1,24 @@
+<html>
+<body>
+<h2>Alunos</h2>
+<input id="nome"><input id="nota" type="number">
+<button onclick="add()">Adicionar</button>
+<button onclick="filtrar()">Aprovados</button>
+<ul id="lista"></ul>
+
+<script>
+let alunos=[];
+function add(){
+ alunos.push({nome:nome.value,nota:+nota.value});
+ render(alunos);
+}
+function render(arr){
+ lista.innerHTML="";
+ arr.forEach(a=>lista.innerHTML+=`<li>${a.nome}-${a.nota}</li>`);
+}
+function filtrar(){
+ render(alunos.filter(a=>a.nota>=7));
+}
+</script>
+</body>
+</html>
