@@ -1,0 +1,25 @@
+<html>
+<body>
+<h2>Filmes</h2>
+<input id="titulo"><input id="genero">
+<button onclick="add()">Adicionar</button>
+<button onclick="filtrar()">Filtrar</button>
+<ul id="lista"></ul>
+
+<script>
+let filmes=[];
+function add(){
+ filmes.push({titulo:titulo.value,genero:genero.value});
+ render(filmes);
+}
+function render(arr){
+ lista.innerHTML="";
+ arr.forEach(f=>lista.innerHTML+=`<li>${f.titulo}</li>`);
+}
+function filtrar(){
+ let g=prompt("Genero:");
+ render(filmes.filter(f=>f.genero==g));
+}
+</script>
+</body>
+</html>
